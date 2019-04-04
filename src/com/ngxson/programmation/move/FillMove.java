@@ -31,7 +31,7 @@ public class FillMove implements Move {
     }
 
     public void display() {
-        System.out.format("Fill %dL in bottle %s.",
+        System.out.format("Fill %dL in bottle %s.\n",
                 amountProcessed,
                 bottle.getName()
         );

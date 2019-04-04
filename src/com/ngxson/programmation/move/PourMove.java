@@ -56,7 +56,7 @@ public class PourMove implements Move {
     }
 
     public void display() {
-        System.out.format("Pour %dL from bottle %s to bottle %s.",
+        System.out.format("Pour %dL from bottle %s to bottle %s.\n",
                 amountProcessed,
                 bottle1.getName(),
                 bottle2.getName()

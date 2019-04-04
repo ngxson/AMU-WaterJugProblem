@@ -31,7 +31,7 @@ public class EmptyMove implements Move {
     }
 
     public void display() {
-        System.out.format("Empty %dL from bottle %s.",
+        System.out.format("Empty %dL from bottle %s.\n",
                 amountProcessed,
                 bottle.getName()
         );
