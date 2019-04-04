@@ -29,9 +29,10 @@ public class Configuration {
     public List<Move> possibleMoves() {
         List<Move> moves = new ArrayList<>();
         for (Bottle bottle : bottles) {
-            if (bottle.isEmpty()) {
+            if (!bottle.isFull()) {
                 moves.add(new FillMove(bottle));
-            } else if (bottle.getCapacity() > 0) {
+            }
+            if (!bottle.isEmpty()) {
                 moves.add(new EmptyMove(bottle));
                 findPourMove(moves, bottle);
             }
