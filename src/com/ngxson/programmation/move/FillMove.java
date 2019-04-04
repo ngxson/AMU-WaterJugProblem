@@ -24,7 +24,7 @@ public class FillMove implements Move {
         for (Bottle mBottle : configuration.getBottles()) {
             if (mBottle.equals(bottle)) {
                 mBottle.pour(-amountProcessed);
-                amountProcessed = 0;
+                //amountProcessed = 0;
                 return;
             }
         }

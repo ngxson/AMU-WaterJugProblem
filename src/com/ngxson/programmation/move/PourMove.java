@@ -52,7 +52,7 @@ public class PourMove implements Move {
         }
         mBottle1.pour(amountProcessed);
         mBottle2.pour(-amountProcessed);
-        amountProcessed = 0;
+        //amountProcessed = 0;
     }
 
     public void display() {
