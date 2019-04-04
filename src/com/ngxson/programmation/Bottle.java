@@ -5,7 +5,7 @@ public class Bottle {
     private int waterLevel;
     private String name;
 
-    Bottle(int capacity, int waterLevel, String name) {
+    public Bottle(int capacity, int waterLevel, String name) {
         this.capacity = capacity;
         this.waterLevel = waterLevel;
         this.name = name;
@@ -28,7 +28,7 @@ public class Bottle {
         if (waterLevel < 0) waterLevel = 0;
         if (waterLevel >= capacity) {
             // the bottle is full
-            int rest = capacity - waterLevel;
+            int rest = waterLevel - capacity;
             waterLevel = capacity;
             return rest;
         } else {
