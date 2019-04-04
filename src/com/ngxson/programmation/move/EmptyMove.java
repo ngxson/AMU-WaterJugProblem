@@ -14,7 +14,7 @@ public class EmptyMove implements Move {
     public void apply(Configuration configuration) {
         for (Bottle mBottle : configuration.getBottles()) {
             if (mBottle.equals(bottle)) {
-                amountProcessed = mBottle.makeEmpty();
+                amountProcessed = -mBottle.makeEmpty();
                 return;
             }
         }

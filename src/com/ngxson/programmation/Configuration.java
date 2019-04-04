@@ -10,7 +10,7 @@ import java.util.*;
 public class Configuration {
     private List<Bottle> bottles;
 
-    Configuration(List<Bottle> bottles) {
+    public Configuration(List<Bottle> bottles) {
         this.bottles = bottles;
     }
 
