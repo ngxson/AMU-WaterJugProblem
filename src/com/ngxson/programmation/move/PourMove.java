@@ -32,7 +32,7 @@ public class PourMove implements Move {
         }
         mBottle1.pourAllTo(mBottle2);
 
-        amountProcessed = mBottle1.getWaterLevel() - amountBefore;
+        amountProcessed = amountBefore - mBottle1.getWaterLevel();
     }
 
     public void reverse(Configuration configuration) {
@@ -50,7 +50,7 @@ public class PourMove implements Move {
                 break;
             }
         }
-        mBottle1.pour(-amountProcessed);
+        mBottle1.pour(amountProcessed);
         mBottle2.pour(-amountProcessed);
         amountProcessed = 0;
     }
