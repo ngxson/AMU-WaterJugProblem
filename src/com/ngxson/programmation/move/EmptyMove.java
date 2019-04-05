@@ -23,7 +23,7 @@ public class EmptyMove implements Move {
     public void reverse(Configuration configuration) {
         for (Bottle mBottle : configuration.getBottles()) {
             if (mBottle.equals(bottle)) {
-                mBottle.pour(amountProcessed);
+                mBottle.pourIn(amountProcessed);
                 //amountProcessed = 0;
                 return;
             }

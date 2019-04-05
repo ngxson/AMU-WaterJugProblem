@@ -12,9 +12,9 @@ public class Bottle {
     }
 
     public void pourAllTo(Bottle bottle) {
-        int rest = bottle.pour(this.waterLevel);
+        int rest = bottle.pourIn(this.waterLevel);
         this.makeEmpty();
-        this.pour(rest);
+        this.pourIn(rest);
     }
 
     /**
@@ -23,7 +23,7 @@ public class Bottle {
      * @return if the bottle is already full,
      * return the rest amount which cannot be poured into this bottle
      */
-    public int pour(int amount) {
+    public int pourIn(int amount) {
         waterLevel += amount;
         if (waterLevel < 0) waterLevel = 0;
         if (waterLevel >= capacity) {

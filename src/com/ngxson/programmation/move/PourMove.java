@@ -50,8 +50,8 @@ public class PourMove implements Move {
                 break;
             }
         }
-        mBottle1.pour(amountProcessed);
-        mBottle2.pour(-amountProcessed);
+        mBottle1.pourIn(amountProcessed);
+        mBottle2.pourIn(-amountProcessed);
         //amountProcessed = 0;
     }
 

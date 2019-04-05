@@ -19,9 +19,9 @@ public class BottleTest {
     }
 
     @Test
-    public void pour() {
+    public void pourIn() {
         Bottle bottle = new Bottle(10, 8, "b1");
-        int rest = bottle.pour(22);
+        int rest = bottle.pourIn(22);
 
         assertEquals(rest, 20);
     }
