@@ -26,6 +26,16 @@ public class Configuration {
         return true;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        return equals((Configuration) object);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bottles);
+    }
+
     public List<Move> possibleMoves() {
         List<Move> moves = new ArrayList<>();
         for (Bottle bottle : bottles) {
@@ -46,6 +56,16 @@ public class Configuration {
                 moves.add(new PourMove(bottle, bottle2));
             }
         }
+    }
+
+    public void display() {
+        for (Bottle bottle : bottles) {
+            System.out.format("%s: %dL - ",
+                    bottle.getName(),
+                    bottle.getWaterLevel()
+            );
+        }
+        System.out.format("\n");
     }
 
     public List<Bottle> getBottles() {

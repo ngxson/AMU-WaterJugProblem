@@ -1,5 +1,7 @@
 package com.ngxson.programmation;
 
+import java.util.Objects;
+
 public class Bottle {
     private int capacity;
     private int waterLevel;
@@ -15,6 +17,16 @@ public class Bottle {
         int rest = bottle.pourIn(this.waterLevel);
         this.makeEmpty();
         this.pourIn(rest);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        return equals((Bottle) object);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(capacity, waterLevel, name);
     }
 
     /**
