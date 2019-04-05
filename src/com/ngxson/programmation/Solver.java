@@ -14,9 +14,9 @@ public class Solver {
     }
 
     public boolean isWinningMove(Move move) {
-        move.apply(initConfig);
+        move.apply();
         boolean isWin = initConfig.equals(targetConfig);
-        move.reverse(initConfig);
+        move.reverse();
         return isWin;
     }
 

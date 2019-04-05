@@ -21,12 +21,12 @@ public class PourMoveTest {
         Configuration config = new Configuration(bottles);
 
         PourMove move = new PourMove(bottles.get(0), bottles.get(1));
-        move.apply(config);
+        move.apply();
         move.display();
         assertEquals(bottles.get(0).getWaterLevel(), 3);
         assertEquals(bottles.get(1).getWaterLevel(), 10);
 
-        move.reverse(config);
+        move.reverse();
         assertEquals(bottles.get(0).getWaterLevel(), 8);
         assertEquals(bottles.get(1).getWaterLevel(), 5);
     }

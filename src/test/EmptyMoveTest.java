@@ -21,12 +21,12 @@ public class EmptyMoveTest {
         Configuration config = new Configuration(bottles);
 
         EmptyMove move = new EmptyMove(bottles.get(0));
-        move.apply(config);
+        move.apply();
         move.display();
         assertEquals(bottles.get(0).getWaterLevel(), 0);
         assertEquals(bottles.get(1).getWaterLevel(), 5);
 
-        move.reverse(config);
+        move.reverse();
         assertEquals(bottles.get(0).getWaterLevel(), 8);
         assertEquals(bottles.get(1).getWaterLevel(), 5);
     }

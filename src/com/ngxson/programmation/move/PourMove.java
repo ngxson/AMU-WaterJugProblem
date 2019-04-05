@@ -13,45 +13,17 @@ public class PourMove implements Move {
         this.bottle2 = toBottle;
     }
 
-    public void apply(Configuration configuration) {
+    public void apply() {
         int amountBefore = 0;
-        Bottle mBottle1 = bottle1;
-        Bottle mBottle2 = bottle2;
-        for (Bottle mBottle : configuration.getBottles()) {
-            if (mBottle.equals(bottle1)) {
-                mBottle1 = mBottle;
-                amountBefore = mBottle.getWaterLevel();
-                break;
-            }
-        }
-        for (Bottle mBottle : configuration.getBottles()) {
-            if (mBottle.equals(bottle2)) {
-                mBottle2 = mBottle;
-                break;
-            }
-        }
-        mBottle1.pourAllTo(mBottle2);
+        amountBefore = bottle1.getWaterLevel();
+        bottle1.pourAllTo(bottle2);
 
-        amountProcessed = amountBefore - mBottle1.getWaterLevel();
+        amountProcessed = amountBefore - bottle1.getWaterLevel();
     }
 
-    public void reverse(Configuration configuration) {
-        Bottle mBottle1 = bottle1;
-        Bottle mBottle2 = bottle2;
-        for (Bottle mBottle : configuration.getBottles()) {
-            if (mBottle.equals(bottle1)) {
-                mBottle1 = mBottle;
-                break;
-            }
-        }
-        for (Bottle mBottle : configuration.getBottles()) {
-            if (mBottle.equals(bottle2)) {
-                mBottle2 = mBottle;
-                break;
-            }
-        }
-        mBottle1.pourIn(amountProcessed);
-        mBottle2.pourIn(-amountProcessed);
+    public void reverse() {
+        bottle1.pourIn(amountProcessed);
+        bottle2.pourIn(-amountProcessed);
         //amountProcessed = 0;
     }
 

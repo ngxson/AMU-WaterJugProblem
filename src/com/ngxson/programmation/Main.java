@@ -17,8 +17,8 @@ public class Main {
         Configuration initConfig = new Configuration(bottles1);
 
         List<Bottle> bottles2 = new ArrayList<>();
-        bottles2.add(new Bottle(3, 0, "b1"));
-        bottles2.add(new Bottle(5, 4, "b2"));
+        bottles2.add(new Bottle(3, 3, "b1"));
+        bottles2.add(new Bottle(5, 0, "b2"));
         Configuration targetConfig = new Configuration(bottles2);
 
         Solver solver = new Solver(initConfig, targetConfig);

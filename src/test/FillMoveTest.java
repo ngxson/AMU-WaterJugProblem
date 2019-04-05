@@ -21,12 +21,12 @@ public class FillMoveTest {
         Configuration config = new Configuration(bottles);
 
         FillMove move = new FillMove(bottles.get(0));
-        move.apply(config);
+        move.apply();
         move.display();
         assertEquals(bottles.get(0).getWaterLevel(), 10);
         assertEquals(bottles.get(1).getWaterLevel(), 5);
 
-        move.reverse(config);
+        move.reverse();
         assertEquals(bottles.get(0).getWaterLevel(), 8);
         assertEquals(bottles.get(1).getWaterLevel(), 5);
     }

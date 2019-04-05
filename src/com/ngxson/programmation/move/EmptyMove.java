@@ -11,23 +11,12 @@ public class EmptyMove implements Move {
         this.bottle = bottle;
     }
 
-    public void apply(Configuration configuration) {
-        for (Bottle mBottle : configuration.getBottles()) {
-            if (mBottle.equals(bottle)) {
-                amountProcessed = -mBottle.makeEmpty();
-                return;
-            }
-        }
+    public void apply() {
+        amountProcessed = -bottle.makeEmpty();
     }
 
-    public void reverse(Configuration configuration) {
-        for (Bottle mBottle : configuration.getBottles()) {
-            if (mBottle.equals(bottle)) {
-                mBottle.pourIn(amountProcessed);
-                //amountProcessed = 0;
-                return;
-            }
-        }
+    public void reverse() {
+        bottle.pourIn(amountProcessed);
     }
 
     public void display() {

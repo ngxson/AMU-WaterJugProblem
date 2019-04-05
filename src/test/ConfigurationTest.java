@@ -20,9 +20,9 @@ public class ConfigurationTest {
         Configuration config = new Configuration(bottles);
 
         for (Move move : config.possibleMoves()) {
-            move.apply(config);
+            move.apply();
             move.display();
-            move.reverse(config);
+            move.reverse();
         }
     }
 }
