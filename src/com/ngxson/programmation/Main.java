@@ -7,7 +7,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        findSolutionFor2Bottles(3,5, 0, 4);
+        //findSolutionFor2Bottles(3, 5, 0, 4);
+        findSolutionFor2Bottles(131, 297, 0, 5);
     }
 
     private static void findSolutionFor2Bottles(int b1cap,

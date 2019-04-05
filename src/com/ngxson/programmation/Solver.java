@@ -2,19 +2,19 @@ package com.ngxson.programmation;
 
 import com.ngxson.programmation.move.Move;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 public class Solver {
     private Configuration initConfig;
     private Configuration targetConfig;
     private Deque<Move> candidateMoves;
+    private Set<Configuration> reachedConfigurations;
 
     public Solver(Configuration initConfig, Configuration targetConfig) {
         this.initConfig = initConfig;
         this.targetConfig = targetConfig;
         this.candidateMoves = new ArrayDeque<>();
+        this.reachedConfigurations = new HashSet<>();
     }
 
     public boolean isWinningMove(Move move) {
@@ -54,6 +54,19 @@ public class Solver {
     public Move findWinningMoveFromMove(Move lastMove) {
         // bump to this node on the tree
         if (lastMove != null) lastMove.apply();
+
+        // debug
+        /*if (lastMove != null) lastMove.display();
+        System.out.print(" - ");
+        initConfig.display();
+        System.out.print("\n");*/
+
+        // dynamic programming: check reachedConfigurations
+        if (reachedConfigurations.contains(initConfig)) {
+            if (lastMove != null) lastMove.reverse();
+            return null;
+        }
+
         // find all child nodes and check it
         List<Move> possibleMoves = initConfig.possibleMoves();
         for (Move nextMove : possibleMoves) {
@@ -67,6 +80,10 @@ public class Solver {
                 enqueueNewMoves(lastMove, nextMove);
             }
         }
+
+        // dynamic programming: save this configuration
+        reachedConfigurations.add(initConfig);
+
         // go back to root of the tree
         if (lastMove != null) lastMove.reverse();
 
