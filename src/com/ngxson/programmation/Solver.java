@@ -82,7 +82,7 @@ public class Solver {
         }
 
         // dynamic programming: save this configuration
-        reachedConfigurations.add(initConfig);
+        reachedConfigurations.add(initConfig.clone());
 
         // go back to root of the tree
         if (lastMove != null) lastMove.reverse();

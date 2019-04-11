@@ -3,13 +3,12 @@ package test;
 import com.ngxson.programmation.Bottle;
 import com.ngxson.programmation.Configuration;
 import com.ngxson.programmation.move.EmptyMove;
-import com.ngxson.programmation.move.Move;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmptyMoveTest {
 

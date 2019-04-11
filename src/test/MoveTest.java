@@ -5,9 +5,7 @@ import com.ngxson.programmation.move.EmptyMove;
 import com.ngxson.programmation.move.FillMove;
 import com.ngxson.programmation.move.Move;
 import com.ngxson.programmation.move.PourMove;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
 public class MoveTest {
 
@@ -31,5 +29,8 @@ public class MoveTest {
         assertEquals(b1.getWaterLevel(), 0);
         assertEquals(b2.getWaterLevel(), 15);
         assertEquals(b3.getWaterLevel(), 5);
+    }
+
+    private void assertEquals(int waterLevel, int i) {
     }
 }

@@ -71,4 +71,17 @@ public class Configuration {
     public List<Bottle> getBottles() {
         return bottles;
     }
+
+    @Override
+    public Configuration clone() {
+        List<Bottle> newBottles = new ArrayList<>();
+        for (Bottle bottle : bottles) {
+            newBottles.add(new Bottle(
+                    bottle.getCapacity(),
+                    bottle.getWaterLevel(),
+                    bottle.getName()
+            ));
+        }
+        return new Configuration(newBottles);
+    }
 }

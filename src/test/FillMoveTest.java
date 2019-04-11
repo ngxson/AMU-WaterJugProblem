@@ -4,12 +4,11 @@ import com.ngxson.programmation.Bottle;
 import com.ngxson.programmation.Configuration;
 import com.ngxson.programmation.move.EmptyMove;
 import com.ngxson.programmation.move.FillMove;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 public class FillMoveTest {
 
@@ -29,5 +28,8 @@ public class FillMoveTest {
         move.reverse();
         assertEquals(bottles.get(0).getWaterLevel(), 8);
         assertEquals(bottles.get(1).getWaterLevel(), 5);
+    }
+
+    private void assertEquals(int waterLevel, int i) {
     }
 }
